@@ -3,7 +3,7 @@ import { IFindAllBaseOptions, IFindByIdBaseOptions } from '../interfaces';
 import { GenericObject, SuccessResponse } from '../types';
 
 export interface IBaseService<T> {
-  findByIdBase(id: string, options: IFindByIdBaseOptions): Promise<T>;
+  findByIdBase(id: string, options?: IFindByIdBaseOptions): Promise<T>;
 
   isExist(filters: GenericObject): Promise<T>;
 
@@ -11,8 +11,6 @@ export interface IBaseService<T> {
     filters: GenericObject,
     options?: IFindByIdBaseOptions,
   ): Promise<T>;
-
-  findAllBase(filters: GenericObject, options: IFindAllBaseOptions): Promise<T>;
 
   findAllBase(
     filters: GenericObject,
